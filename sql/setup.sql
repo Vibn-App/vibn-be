@@ -21,8 +21,8 @@ CREATE TABLE artists (
 );
 
 CREATE TABLE user_artists (
-  user_id BIGINT NOT NULL REFERENCES users(id),
-  artist_id TEXT NOT NULL REFERENCES artists(id)
+  user_table_id BIGINT NOT NULL REFERENCES users(id),
+  artist_id_table TEXT NOT NULL REFERENCES artists(id)
 );
 
 CREATE TABLE conversations (
