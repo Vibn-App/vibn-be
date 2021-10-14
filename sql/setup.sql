@@ -13,16 +13,16 @@ CREATE TABLE users (
 );
 
 CREATE TABLE artists (
-  id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  id TEXT PRIMARY KEY,
   artist_name TEXT NOT NULL,
-  artist_image TEXT,
-  artist_link TEXT NOT NULL,
-  artist_genre TEXT
+  artist_image TEXT NOT NULL,
+  artist_url TEXT NOT NULL,
+  artist_genre TEXT NOT NULL
 );
 
 CREATE TABLE user_artists (
   user_id BIGINT NOT NULL REFERENCES users(id),
-  artist_id BIGINT NOT NULL REFERENCES artists(id)
+  artist_id TEXT NOT NULL REFERENCES artists(id)
 );
 
 CREATE TABLE conversations (
