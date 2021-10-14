@@ -15,18 +15,20 @@ describe('Artist routes', () => {
 
   it('Gets all artists via GET', async () => {
     const GB = await Artist.insert({
+      id: '2SVw939fwuqSobLjF8u78b',
         artistName: 'Gogol Bordello',
         artistImage:
           'https://i.scdn.co/image/ab6761610000e5eb7c146afccb1159cb0a79acc3',
-        artistLink: 'https://open.spotify.com/artist/2SVw939fwuqSobLjF8u78b',
+        artistUrl: 'https://open.spotify.com/artist/2SVw939fwuqSobLjF8u78b',
         artistGenre: ['gypsy', 'hardcore', 'screamo'],
       });
     
     const PTV = await Artist.insert({
+      id: '4iJLPqClelZOBCBifm8Fzv',
         artistName: 'Pierce The Veil',
         artistImage:
           'https://i.scdn.co/image/ab6761610000e5eb58c744a03131b95b9e846ff5',
-        artistLink: 'https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv',
+        artistUrl: 'https://open.spotify.com/artist/4iJLPqClelZOBCBifm8Fzv',
         artistGenre: ['post-hardcore', 'hardcore', 'screamo'],
     })
     
