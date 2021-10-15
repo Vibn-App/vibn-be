@@ -17,12 +17,12 @@ CREATE TABLE artists (
   artist_name TEXT NOT NULL,
   artist_image TEXT NOT NULL,
   artist_url TEXT NOT NULL,
-  artist_genre TEXT NOT NULL
+  artist_genre TEXT
 );
 
 CREATE TABLE user_artists (
-  user_table_id BIGINT NOT NULL REFERENCES users(id),
-  artist_id_table TEXT NOT NULL REFERENCES artists(id)
+  user_id BIGINT NOT NULL REFERENCES users(id),
+  artist_id TEXT NOT NULL REFERENCES artists(id)
 );
 
 CREATE TABLE conversations (

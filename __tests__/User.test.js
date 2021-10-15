@@ -13,7 +13,7 @@ describe('User routes', () => {
   });
 
   it('Gets a user by ID via GET', async () => {
-      const sbeve = await User.insert({
+      const user = await User.insert({
         displayName: 'Sbeve',
         email: 'sbeve@busey.co',
         profileURL: 'http://spotify.com',
@@ -21,9 +21,9 @@ describe('User routes', () => {
           'https://upload.wikimedia.org/wikipedia/en/8/8b/ST3_Steve_Harrington_portrait.jpg',
       });
 
-      const res = await request(app).get(`/api/v1/users/${sbeve.id}`);
+      const res = await request(app).get(`/api/v1/users/${user.id}`);
 
-      expect(res.body).toEqual(sbeve);
+      expect(res.body).toEqual(user);
   });
     it('Gets all users via GET', async () => {
         const sbeve = await User.insert({
