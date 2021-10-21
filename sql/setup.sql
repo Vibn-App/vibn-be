@@ -20,6 +20,17 @@ CREATE TABLE artists (
   artist_genre TEXT
 );
 
+-- Since the fields belong to the artist table,
+-- you can remove the `artist_` prefix
+-- without reducing clarity:
+-- CREATE TABLE artists (
+--   id TEXT PRIMARY KEY,
+--   name TEXT NOT NULL,
+--   image TEXT NOT NULL,
+--   url TEXT NOT NULL,
+--   genre TEXT
+-- );
+
 CREATE TABLE user_artists (
   user_id BIGINT NOT NULL REFERENCES users(id),
   artist_id TEXT NOT NULL REFERENCES artists(id)

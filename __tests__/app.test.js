@@ -3,7 +3,7 @@ const setup = require('../data/setup.js');
 // const request = require('supertest');
 // const app = require('../lib/app.js');
 
-describe('vibin-be routes', () => {
+describe('vibn-be routes', () => {
   beforeEach(() => {
     return setup(pool);
   });
@@ -12,6 +12,7 @@ describe('vibin-be routes', () => {
     pool.end();
   });
 
+  // Maybe do something important?
   it('does nothing important yet', async () => {
     const res = 'hi';
 

@@ -2,7 +2,6 @@ const pool = require('../lib/utils/pool.js');
 const setup = require('../data/setup.js');
 const request = require('supertest');
 const Artist = require('../lib/models/Artist');
-const User = require('../lib/models/User');
 const app = require('../lib/app');
 
 describe('Artist routes', () => {
@@ -14,7 +13,7 @@ describe('Artist routes', () => {
   });
 
   it('Gets all artists via GET', async () => {
-    const GB = await Artist.insert({
+    const artist1 = await Artist.insert({
       id: '2SVw939fwuqSobLjF8u78b',
         artistName: 'Gogol Bordello',
         artistImage:
@@ -23,7 +22,7 @@ describe('Artist routes', () => {
         artistGenre: ['gypsy', 'hardcore', 'screamo'],
       });
     
-    const PTV = await Artist.insert({
+    const artist2 = await Artist.insert({
       id: '4iJLPqClelZOBCBifm8Fzv',
         artistName: 'Pierce The Veil',
         artistImage:
@@ -34,7 +33,7 @@ describe('Artist routes', () => {
     
     const res = await request(app).get('/api/v1/artists');
 
-    expect(res.body).toEqual([GB, PTV]);
+    expect(res.body).toEqual([artist1, artist2]);
   });
 
 });
